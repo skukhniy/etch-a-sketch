@@ -1,0 +1,14 @@
+
+#container {
+    border: solid black;
+    height:calc(37px*16);
+    width:calc(37px*16);
+    display: flex;
+    flex-wrap: wrap;
+}
+#container div{
+    height: calc(35px);
+    width: calc(35px);
+    background-color: white;
+    border: 1px solid black;
+}
