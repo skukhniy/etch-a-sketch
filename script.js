@@ -4,6 +4,9 @@ function createGrid(gridSize){
     for (let i = 0; i<(gridSize*gridSize); i++){
         const gridBlock = document.createElement('div')
         gridBlock.classList.add('gridBlock')
+        gridHW = ((592/gridSize)-2).toString() + 'px'
+        gridBlock.style.height = gridHW
+        gridBlock.style.width = gridHW
         gridBlock.addEventListener('mouseover',function(){
             gridBlock.style.backgroundColor = "green"
         })
@@ -27,6 +30,8 @@ function gridSelect(){
     }
     
 }
+
+function removeGrid(){}
 // button triggers grid select funct
 gridSelectBtn.addEventListener('click',function(){
     gridSelect()
@@ -44,7 +49,7 @@ const gridBlocks = document.querySelectorAll(".gridBlock")
 //iterates through each gridblock to remove style when button is pressed
 gridBlocks.forEach((gridBlock) => {
     clear.addEventListener('click',function(){
-        gridBlock.removeAttribute("style")
+        gridBlock.style.removeProperty("background-color")
     })
 })
 
