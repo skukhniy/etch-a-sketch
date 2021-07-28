@@ -31,25 +31,36 @@ function gridSelect(){
     
 }
 
-function removeGrid(){}
+// remove old grid
+function removeGrid(array){
+    array.forEach((block) => {
+        block.remove()
+    })
+}
+function clear() {
+    // clear button
+    const clear = document.querySelector("#clear")
+    //selects all the gridBlocks in one element
+    gridBlocks = document.querySelectorAll(".gridBlock")
+    //iterates through each gridblock to remove style when button is pressed
+    gridBlocks.forEach((gridBlock) => {
+        clear.addEventListener('click',function(){
+            gridBlock.style.removeProperty("background-color")
+        })
+    })
+}
+
+//selects all the gridBlocks in one element
+var gridBlocks = document.querySelectorAll(".gridBlock")
+
 // button triggers grid select funct
 gridSelectBtn.addEventListener('click',function(){
     gridSelect()
+    removeGrid(gridBlocks)
     createGrid(gridSize)
+    clear()
  }) 
 
 //default 16x16 grid for startup
 createGrid(16)
-
-
-// clear button
-const clear = document.querySelector("#clear")
-//selects all the gridBlocks in one element
-const gridBlocks = document.querySelectorAll(".gridBlock")
-//iterates through each gridblock to remove style when button is pressed
-gridBlocks.forEach((gridBlock) => {
-    clear.addEventListener('click',function(){
-        gridBlock.style.removeProperty("background-color")
-    })
-})
-
+clear()
