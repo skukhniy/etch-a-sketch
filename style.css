@@ -1,4 +1,6 @@
-
+body{
+    background-color: gray;
+}
 #container {
     border: solid black;
     height:calc(37px*16);
