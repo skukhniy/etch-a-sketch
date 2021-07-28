@@ -8,13 +8,14 @@ function createGrid(gridSize){
         gridBlock.style.height = gridHW
         gridBlock.style.width = gridHW
         gridBlock.addEventListener('mouseover',function(){
-            gridBlock.style.backgroundColor = "green"
+            gridBlock.style.backgroundColor = "blue"
         })
         container.appendChild(gridBlock)
     }
 }
 
 gridSize = 0 // initalizes grid size variable
+
 const gridSelectBtn = document.querySelector("#grid-size") //grid select button
 // prompts user to enter grid size
 function gridSelect(){
